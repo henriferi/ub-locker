@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ALTERAR SENHA</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancelar()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="alterarSenha()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Senha atual</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="senhaAtual"
+          name="senhaAtual"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nova senha</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="novaSenha"
+          name="novaSenha"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Confirmar nova senha</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="confirmarSenha"
+          name="confirmarSenha"
+          required
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      class="btn-senha"
+      expand="block"
+      type="submit"
+    >
+      <div class="button-content full-space-between">
+        <span class="button-text">Alterar Senha</span>
+        <ion-icon class="button-icon" name="key-outline"></ion-icon>
+      </div>
+    </ion-button>
+  </form>
+</ion-content>

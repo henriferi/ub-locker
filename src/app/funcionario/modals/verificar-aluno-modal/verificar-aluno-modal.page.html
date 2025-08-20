@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Informações do usuário</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fechar()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content class="ion-padding">
+    <div class="profile-box">
+
+    </div>
+</ion-content> -->
+
+<ion-content>
+  <div class="sub-header-container">
+    <div class="locker-content sub-header">
+      <div class="photo">
+        <img
+          src="https://www.mygeekconfessions.com/wp-content/uploads/2014/07/stazfeat.png"
+          alt="foto de perfil"
+        />
+      </div>
+      <div class="info-usuario">
+        <h3>{{ NomeAluno | uppercase }}</h3>
+
+        <p class="box-info">{{ CodCurso }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-aluno">
+    <div class="vinculo-box">
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="school-outline"></ion-icon>
+              <h3>RA</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ RA }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="card-outline"></ion-icon>
+              <h3>CPF</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ CpfAluno }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="mail-outline"></ion-icon>
+              <h3>EMAIL</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ EmailAluno }} </ion-badge>
+        </ion-item>
+      </ion-list>
+      <h4 class="title-button">
+        <ng-container *ngIf="vinculoAtivo; else vincularTexto">
+          Tem certeza que deseja desvincular esse aluno?
+        </ng-container>
+        <ng-template #vincularTexto>
+          Deseja vincular esse usuário a um armário?
+        </ng-template>
+      </h4>
+
+      <ion-button
+        class="btn-vinculo"
+        (click)="vinculoAtivo ? vincularAluno() : vincularAluno()"
+      >
+        <div class="button-content">
+          <span class="button-text">
+            {{ vinculoAtivo ? 'Desvincular' : 'Vincular' }}
+          </span>
+        </div>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

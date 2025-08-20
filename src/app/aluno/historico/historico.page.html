@@ -1,0 +1,38 @@
+<ion-header>
+  <div class="locker-content page-header">
+    <div class="page-header-logo">
+      <img
+        src="./../../../assets/imgs/brasao-unibra-azul.png"
+        alt="Logo UNIBRA"
+      />
+    </div>
+    <h1 class="title-header">Locker</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="sub-header-container">
+    <div class="sub-header">
+      <h4><ion-icon name="scan-outline"></ion-icon>Histórico</h4>
+    </div>
+  </div>
+
+  <div class="locker-content content-registro">
+    <ion-list>
+      <ion-item
+        class="register"
+        *ngFor="let item of historico"
+        button
+        (click)="abrirModal(item)"
+      >
+        <ion-label>
+          <div class="locker">
+            <p class="locale">{{ item.Local }}</p>
+            <h2 class="number">{{ item.Armario }}</h2>
+          </div>
+        </ion-label>
+        <ion-badge slot="end">{{ item.Entrada | date:'dd/MM/yyyy' }}</ion-badge>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

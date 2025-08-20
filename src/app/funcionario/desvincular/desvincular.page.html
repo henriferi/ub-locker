@@ -1,0 +1,112 @@
+<ion-header>
+  <div class="locker-content page-header">
+    <div class="page-header-logo">
+      <img
+        src="./../../../assets/imgs/brasao-unibra-azul.png"
+        alt="Logo UNIBRA"
+      />
+    </div>
+    <h1 class="title-header">Perfil do usuário</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="sub-header-container">
+    <div class="locker-content sub-header">
+      <div class="photo">
+        <img
+          src="https://www.mygeekconfessions.com/wp-content/uploads/2014/07/stazfeat.png"
+          alt="foto de perfil"
+        />
+      </div>
+      <div class="info-usuario">
+        <h3>IVISON DA SILVA BASTOS</h3>
+
+        <p class="box-info">Análise e Desenvolvimento de Sistemas</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="locker-content content-registro">
+    <div class="about-me-container">
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="school-outline"></ion-icon>
+              <h3>RA</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> 2024187401 </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="card-outline"></ion-icon>
+              <h3>CPF</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> 123.456.789.10 </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="mail-outline"></ion-icon>
+              <h3>EMAIL</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> IVISON&#64;EMAIL.COM </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="call-outline"></ion-icon>
+              <h3>TELEFONE</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> 81 91234-5678 </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <h3>DT. NASCIMENTO</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> 18/08/1999 </ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <h3>LOCKER</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end">C2-B</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="cube-outline"></ion-icon>
+              <h3>ARMÁRIO</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end">69</ion-badge>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="unlink">
+      <h3>Deseja desvincular o aluno/visitante acima?</h3>
+      <div class="modal-buttons">
+        <ion-button class="btn-logout-cancel" (click)="cancel()">
+          Não
+        </ion-button>
+        <ion-button class="btn-logout" (click)="confirm()"> Sim </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

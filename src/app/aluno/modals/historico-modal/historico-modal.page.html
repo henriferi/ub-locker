@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modal-container">
+  <ion-list>
+    <ion-item>
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>
+        <strong class="atendente">Atendente (entrada)</strong>
+      </ion-label>
+      <ion-badge slot="end"> {{ funcionarioVinculo }} </ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-icon name="person"></ion-icon> -->
+      <ion-icon name="arrow-redo-outline"></ion-icon>
+      <ion-label>
+        <strong>Entrada</strong>
+      </ion-label>
+      <ion-badge slot="end">{{ entrada | date:'HH:mm' }}</ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>
+        <strong class="atendente">Atendente (saida)</strong>
+      </ion-label>
+      <ion-badge slot="end">
+        {{ funcionarioDesvinculo || "Vinculo Aberto" }}
+      </ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <!-- <ion-icon name="person"></ion-icon> -->
+      <ion-icon name="arrow-undo-outline"></ion-icon>
+      <ion-label>
+        <strong>Saída</strong>
+      </ion-label>
+      <ion-badge slot="end">
+        {{ saida || "Vinculo Aberto" | date:'HH:mm' }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

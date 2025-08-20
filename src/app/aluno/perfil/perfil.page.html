@@ -1,0 +1,103 @@
+<ion-header>
+  <div class="locker-content page-header">
+    <div class="page-header-logo">
+      <img
+        src="./../../../assets/imgs/brasao-unibra-azul.png"
+        alt="Logo UNIBRA"
+      />
+    </div>
+    <h1 class="title-header">Perfil</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="sub-header-container">
+    <div class="locker-content sub-header">
+      <div class="photo">
+        <img
+          src="https://www.mygeekconfessions.com/wp-content/uploads/2014/07/stazfeat.png"
+          alt="foto de perfil"
+        />
+      </div>
+      <div class="info-usuario">
+        <h3>{{ NomeAluno | uppercase }}</h3>
+
+        <p class="box-info">{{ CodCurso }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="locker-content content-registro">
+    <div class="about-me-container">
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="school-outline"></ion-icon>
+              <h3>RA</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ RA | uppercase }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="card-outline"></ion-icon>
+              <h3>CPF</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ CpfAluno }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="mail-outline"></ion-icon>
+              <h3>EMAIL</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ EmailAluno | uppercase }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="call-outline"></ion-icon>
+              <h3>TELEFONE</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ TelefoneAluno }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <h3>DT. NASCIMENTO</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ DtNascimento }} </ion-badge>
+        </ion-item>
+
+        <ion-item class="btn-alterar-senha" (click)="openEditarPerfilModal()">
+          <h6 class="button">
+            <ion-icon name="person-outline"></ion-icon> EDITAR PERFIL
+          </h6>
+        </ion-item>
+
+        <ion-item class="btn-alterar-senha" (click)="openAlterarSenhaModal()">
+          <h6 class="button">
+            <ion-icon name="key-outline"></ion-icon> ALTERAR SENHA
+          </h6>
+        </ion-item>
+        <ion-item class="logout" (click)="openLogoutModal()">
+          <div class="log-box">
+            <h6 class="button">DESCONECTAR</h6>
+            <ion-icon name="log-out-outline"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,130 @@
+
+.header-content {
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.login-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 100%;
+}
+
+.login-content h1 {
+  color: white;
+  position: relative;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  background-image: url("/assets/imgs/brasao-unibra.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: invert(1);
+  margin-bottom: -25px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 450px;
+  padding: 0 20px;
+
+  .link-registrar {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
+}
+
+
+:host {
+  display: block;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('/assets/imgs/biblioteca.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  ion-item {
+    --background: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(130deg, #002a76, #87a7e2e7);
+    }
+  }
+
+  ion-button.btn-entrar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+    height: 3.5em;
+    --background: linear-gradient(130deg, #002a76, #87a7e2e7);
+    --border-radius: 5px;
+    --box-shadow: none;
+    color: white;
+    font-weight: bold;
+
+    .btn-text {
+      flex: 1;
+      text-align: left;
+      padding-left: 5px;
+    }
+
+    .btn-icon {
+      font-size: 30px;
+      padding-right: 5px;
+    }
+  }
+
+  .icone-senha {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+
+    ion-icon {
+      font-size: 27px;
+      color: white
+    }
+  }
+
+  ion-label {
+    display: flex;
+    gap: 10px;
+  }
+
+  img {
+    width: 1.2em;
+  }
+
+}
+
+

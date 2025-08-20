@@ -1,0 +1,91 @@
+<ion-header>
+  <div class="locker-content">
+    <div class="page-header-logo">
+      <img
+        src="./../../../assets/imgs/brasao-unibra-azul.png"
+        alt="Logo UNIBRA"
+      />
+    </div>
+
+    <h1 class="title-header">{{ nomeFuncionario }}</h1>
+
+    <ion-buttons slot="end">
+      <ion-button
+        [routerLink]="['/tabs/funcionario/cadastro']"
+        routerDirection="root"
+        fill="clear"
+        (click)="irParaCadastro()"
+      >
+        <ion-icon name="search-outline" class="icone-lupa"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content>
+  <!-- Subtítulo da seção -->
+  <div class="sub-header-container">
+    <div class="sub-header">
+      <h4><ion-icon name="scan-outline"></ion-icon>ÚLTIMOS SCANS</h4>
+    </div>
+  </div>
+
+  <!-- Lista de registros com carregamento incremental -->
+  <div class="locker-content content-registro">
+    <div class="info-locker">
+      <ion-list>
+        <ion-item *ngFor="let registro of registros">
+          <img
+            src="/assets/imgs/lindo.png"
+            class="perfil-usuario"
+            alt="perfil"
+          />
+          <ion-label>
+            <h2>{{ registro.nome }}</h2>
+            <p>{{ registro.dataHora }}</p>
+          </ion-label>
+          <ion-badge slot="end">
+            <div class="icons">
+              <!-- Ícone de entrada (vinculado por mim) -->
+              <ion-icon
+                *ngIf="registro.vinculadoPorMim"
+                name="log-in"
+                style="color: green"
+                class="login"
+              ></ion-icon>
+
+              <!-- Ícone de saída (desvinculado por mim) -->
+              <ion-icon
+                *ngIf="registro.desvinculadoPorMim"
+                name="log-out"
+                style="color: darkred"
+                class="logout"
+              ></ion-icon>
+
+              <!-- Ícone padrão (sempre aparece) -->
+              <ion-icon
+                name="lock-closed-outline"
+                style="color: #192a56"
+                class="lock"
+              ></ion-icon>
+            </div>
+            {{ registro.locker }} {{ registro.armario.toString().padStart(2,'0')
+            }}
+          </ion-badge>
+        </ion-item>
+      </ion-list>
+
+      <!-- Infinite Scroll -->
+      <ion-infinite-scroll
+        threshold="100px"
+        (ionInfinite)="carregarMais($event)"
+      >
+        <ion-infinite-scroll-content
+          loadingSpinner="dots"
+          loadingText="Carregando mais..."
+        >
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+</ion-content>

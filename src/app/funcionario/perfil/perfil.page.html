@@ -1,0 +1,77 @@
+<ion-header>
+  <div class="locker-content page-header">
+    <div class="page-header-logo">
+      <img src="./../../../assets/imgs/brasao-unibra-azul.png" alt="Logo UNIBRA" />
+    </div>
+    <h1 class="title-header">Perfil</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+
+  <div class="locker-content content-registro">
+    <div class="about-me-container">
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="person-outline"></ion-icon>
+              <h3>Nome</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end">{{ nome }}</ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="card-outline"></ion-icon>
+              <h3>CPF</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end">{{ cpf }}</ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="mail-outline"></ion-icon>
+              <h3>EMAIL</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ email }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="call-outline"></ion-icon>
+              <h3>TELEFONE</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end">{{ telefone }}</ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <h3>DT. NASCIMENTO</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end">{{ dtNascimento }}</ion-badge>
+        </ion-item>
+
+        <ion-item class="btn-alterar-senha" (click)="openAlterarSenhaModal()">
+          <h6 class="button"><ion-icon name="key-outline"></ion-icon> ALTERAR SENHA</h6>
+        </ion-item>
+        <ion-item class="logout" (click)="openLogoutModal()">
+          <div class="log-box">
+            <h6 class="button">DESCONECTAR</h6>
+            <ion-icon name="log-out-outline"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

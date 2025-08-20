@@ -1,0 +1,77 @@
+<ion-tabs>
+  <!-- Tabs do Funcionário -->
+  <ion-tab-bar
+    class="tab-bar-funcionario"
+    slot="bottom"
+    translucent="true"
+    *ngIf="userType === 3"
+  >
+    <ion-tab-button
+      [routerLink]="['/tabs/funcionario/home']"
+      routerDirection="root"
+    >
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button
+      [routerLink]="['/tabs/funcionario/qrcode']"
+      routerDirection="root"
+      class="qrcode-button"
+    >
+      <ion-icon name="scan-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button
+      [routerLink]="['/tabs/funcionario/lockers']"
+      routerDirection="root"
+    >
+      <ion-icon name="cube-outline"></ion-icon>
+      <ion-label>Lockers</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button
+      [routerLink]="['/tabs/funcionario/perfil']"
+      routerDirection="root"
+    >
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button
+      [routerLink]="['/tabs/funcionario/sobre']"
+      routerDirection="root"
+    >
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <ion-label>Sobre</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <!-- Tabs do Aluno -->
+  <ion-tab-bar
+    slot="bottom"
+    translucent="true"
+    *ngIf="userType !== 3"
+  >
+    <ion-tab-button [routerLink]="['/tabs/aluno/home']" routerDirection="root">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button
+      [routerLink]="['/tabs/aluno/historico']"
+      routerDirection="root"
+    >
+      <ion-icon name="cube-outline"></ion-icon>
+      <ion-label>Histórico</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button
+      [routerLink]="['/tabs/aluno/perfil']"
+      routerDirection="root"
+    >
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

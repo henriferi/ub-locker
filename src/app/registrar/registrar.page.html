@@ -1,0 +1,86 @@
+<ion-header>
+  <div class="locker-content">
+    <div class="page-header-logo">
+      <img src="./../../../assets/imgs/brasao-unibra-azul.png" alt="Logo UNIBRA" />
+    </div>
+    <h1>Realize seu Cadastro</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="locker-content content-registro">
+    <!-- Nome -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon>Nome
+      </ion-label>
+      <ion-input [(ngModel)]="nome" name="name" type="text" required></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="camposInvalidos && !nome">Nome é obrigatório</ion-note>
+
+    <!-- CPF -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="document-text-outline"></ion-icon>
+        CPF
+      </ion-label>
+      <ion-input [(ngModel)]="cpfDigitado" (ionInput)="aplicarMascaraCPF($event)" name="cpf" type="text" maxlength="14"
+        required></ion-input>
+    </ion-item>
+
+    <!-- E-mail -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="mail-outline"></ion-icon>
+        E-mail
+      </ion-label>
+      <ion-input [(ngModel)]="email" name="email" type="email" required
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="camposInvalidos && !emailValido()">E-mail inválido</ion-note>
+
+    <!-- Telefone -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="call-outline"></ion-icon>
+        Telefone com DDD <span class="opcional">(Opcional)</span>
+      </ion-label>
+      <ion-input [(ngModel)]="telefone" (ionInput)="aplicarMascaraTelefone($event)" name="telefone" type="tel"
+        maxlength="15"></ion-input>
+    </ion-item>
+
+    <!-- Data de Nascimento -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="calendar-outline"></ion-icon>
+        Data de Nascimento
+      </ion-label>
+      <ion-input [(ngModel)]="dataNascimento" (ionInput)="aplicarMascaraData($event)" name="dataNascimento" type="text"
+        maxlength="10" required></ion-input>
+    </ion-item>
+
+    <!-- Senha -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="key-outline"></ion-icon>Senha
+      </ion-label>
+      <ion-input [(ngModel)]="senha" name="senha" type="password" required></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="camposInvalidos && !senha">Senha é obrigatória</ion-note>
+
+    <!-- Confirmar Senha -->
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="key-outline"></ion-icon>Confirmar Senha
+      </ion-label>
+      <ion-input [(ngModel)]="confirmarSenha" name="confirmPassword" type="password" required></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="erroSenha">As senhas não conferem!</ion-note>
+
+    <!-- Botão Finalizar -->
+    <ion-button class="btn-guardar" (click)="salvar()">
+      <span class="btn-text">Finalizar Cadastro</span>
+      <ion-icon class="btn-icon" name="lock-closed-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

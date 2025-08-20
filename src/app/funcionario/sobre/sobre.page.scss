@@ -1,0 +1,40 @@
+.title-header {
+    color: #192a56;
+}
+
+.sobre-container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  position: relative;
+  z-index: 1;
+
+  h2 {
+    color: #192a56;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1.4em;
+  }
+
+  p {
+    color: #333;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .info-app {
+    margin-top: 20px;
+    color: #192a56;
+    font-size: 0.85em;
+    line-height: 1.4;
+  }
+
+  .logo-sobre {
+    display: block;
+    margin: 0 auto;
+    max-width: 120px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+  }
+}

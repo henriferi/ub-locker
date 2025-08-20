@@ -1,0 +1,34 @@
+<div class="locker-content login-content">
+  <div class="logo"></div>
+  <h1>UB LOCKER</h1>
+
+  <form (submit)="login()" class="login-form">
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="person-outline"></ion-icon>CPF
+      </ion-label>
+      <ion-input [(ngModel)]="cpf" name="cpf"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="lock-closed"></ion-icon>Senha
+      </ion-label>
+      <ion-input
+        [type]="senhaVisivel ? 'text' : 'password'"
+        [(ngModel)]="senha"
+        name="senha"
+      ></ion-input>
+      <ion-note slot="end" (click)="toggleSenha()" class="icone-senha">
+        <ion-icon [name]="senhaVisivel ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-note>
+    </ion-item>
+
+    <ion-button class="btn-entrar" type="submit">
+      <span class="btn-text">Entrar</span>
+      <ion-icon class="btn-icon" name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+
+    <a class="link-registrar" href="/registrar">Não tem uma conta? Cadastre-se</a>
+  </form>
+</div>

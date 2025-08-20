@@ -1,0 +1,77 @@
+<ion-header>
+  <div class="locker-content">
+    <div class="page-header-logo">
+      <img src="./../../../assets/imgs/brasao-unibra-azul.png" alt="Logo UNIBRA" />
+    </div>
+    <h1>{{ nomeFuncionario }}</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="locker-content content-registro">
+    <ion-item>
+      <ion-label position="floating"><ion-icon name="document-text-outline"></ion-icon> CPF*</ion-label>
+      <ion-input [(ngModel)]="cpfDigitado" name="cpf" type="text" (ionInput)="verificarCpf($event)" maxlength="11"
+        required></ion-input>
+    </ion-item>
+
+    <!-- Formulário -->
+    <form *ngIf="exibirFormulario" #form="ngForm">
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Nome*</ion-label>
+        <ion-input [(ngModel)]="usuario.nome" name="nome" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="call-outline"></ion-icon> Telefone (opcional)
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.telefone" name="telefone" type="tel" maxlength="15"
+          (ionInput)="formatarTelefone($event)"></ion-input>
+      </ion-item>
+
+      <ion-note color="danger" *ngIf="telefoneValido === false">Telefone inválido</ion-note>
+      
+      <ion-item>
+        <ion-label position="floating">
+          <ion-icon name="call-outline"></ion-icon> DTNASCIMENTO
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.dtnascimento" name="dtnascimento" type="tel" maxlength="15"></ion-input>
+      </ion-item>
+
+      <ion-item>
+
+        <ion-label position="floating">
+          <ion-icon name="mail-outline"></ion-icon> Email*
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.email" name="email" type="email" required
+          (ionInput)="validarEmail(usuario.email)" #emailInput="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-note color="danger" *ngIf="emailValido === false">Email inválido</ion-note>
+
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="school-outline"></ion-icon> Curso (opcional)</ion-label>
+        <ion-input [(ngModel)]="usuario.curso" name="curso" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"><ion-icon name="school-outline"></ion-icon> RA (opcional) </ion-label>
+        <ion-input [(ngModel)]="usuario.RA" name="RA" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-id-hidden">
+        <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> ID</ion-label>
+        <ion-input [(ngModel)]="usuario.id" name="id"></ion-input>
+      </ion-item>
+      <ion-button class="btn-guardar" (click)="guardar()"
+        [disabled]="!form.valid || !telefoneEhOpcionalValido() || emailValido !== true">
+        <span class="btn-text">Guardar</span>
+        <ion-icon class="btn-icon" name="lock-closed-outline"></ion-icon>
+      </ion-button>
+
+    </form>
+  </div>
+</ion-content>

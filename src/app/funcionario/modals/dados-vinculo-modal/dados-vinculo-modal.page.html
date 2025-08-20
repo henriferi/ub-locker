@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Informações do vinculo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fechar()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content class="ion-padding">
+    <div class="profile-box">
+
+    </div>
+</ion-content> -->
+
+<ion-content>
+
+  <div class="info-aluno">
+    <div class="vinculo-box">
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="school-outline"></ion-icon>
+              <h3>LOCAL</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ dadosVinculo.LOCAL }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="card-outline"></ion-icon>
+              <h3>ARMARIO</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ dadosVinculo.ARMARIO }} </ion-badge>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="card-outline"></ion-icon>
+              <h3>USUARIO</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ dadosVinculo.ALUNO }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="mail-outline"></ion-icon>
+              <h3>ENTRADA</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ dadosVinculo.ENTRADA }} </ion-badge>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <div class="data-title">
+              <ion-icon name="mail-outline"></ion-icon>
+              <h3>SAIDA</h3>
+            </div>
+          </ion-label>
+          <ion-badge slot="end"> {{ dadosVinculo.SAIDA || "Em aberto" }} </ion-badge>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

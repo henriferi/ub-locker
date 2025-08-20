@@ -1,0 +1,60 @@
+<ion-header>
+  <div class="locker-content">
+    <div class="page-header-logo">
+      <img src="./../../../assets/imgs/brasao-unibra-azul.png" alt="Logo UNIBRA" />
+    </div>
+    <h1 class="title-header">{{ nomeFuncionario }}</h1>
+  </div>
+</ion-header>
+
+<ion-content class="content-registro">
+  <!-- Sessão de lockers vinculados -->
+  <div class="sub-header-container">
+    <div class="sub-header">
+      <h4><ion-icon name="lock-closed-outline"></ion-icon>Vínculos</h4>
+    </div>
+  </div>
+
+  <div class="locker-content lockers">
+    <ion-list>
+      <ion-item-sliding *ngFor="let local of locaisVinculados">
+        <ion-item class="custom-item">
+          <ion-label>
+            <h2>{{ local.LOCAL }}</h2>
+            <p>Total: {{ local.QUANTIDADE_TOTAL_ARMARIOS }}</p>
+            <p>Disponíveis: {{ local.QUANTIDADE_ARMARIOS_DISPONIVEIS }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="desvincularLocker(local)" class="desvincular-option">
+            <ion-icon class="icon-desvincular" name="swap-horizontal-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+
+  <!-- Sessão de locais de trabalho com armários -->
+  <div class="sub-header-container locais-trab">
+    <div class="sub-header">
+      <h4><ion-icon name="cube-outline"></ion-icon>Locais de trabalho</h4>
+    </div>
+  </div>
+
+  <div class="locker-content lockers">
+    <ion-list>
+      <ion-item class="custom-item" *ngFor="let local of locaisNaoVinculados">
+        <ion-label>
+          <h2>{{ local.LOCAL }}</h2>
+          <p>
+            Disponíveis: {{ local.QUANTIDADE_ARMARIOS_DISPONIVEIS }} / {{ local.QUANTIDADE_TOTAL_ARMARIOS }}
+          </p>
+        </ion-label>
+        <ion-button fill="clear" slot="end" (click)="vincularLocker(local)">
+          <ion-icon name="swap-horizontal-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

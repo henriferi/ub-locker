@@ -1,0 +1,77 @@
+.page-header-logo {
+  img {
+    width: 50px;
+  }
+}
+
+.locais-trab {
+  border-top: solid 1px #c6c6c6;
+}
+.info-locker {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lockers{ 
+  padding: 0;
+  flex-direction: column;
+  height: auto;
+}
+
+ion-list {
+  padding: 0;
+  p {
+    color: #192A56;
+    font-size: 0.6em;
+  }
+}
+
+ion-item.custom-item {
+  --border-style: none;
+  --background: transparent;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+.icon-desvincular  {
+  font-size: 25px;
+}
+
+ion-item.custom-item::part(native) {
+  padding: 5px 5px 5px 15px;
+}
+
+ion-list ion-item.custom-item:nth-child(odd) {
+  --background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(100,100,100,0.1) 100%);
+}
+
+ion-list ion-item-sliding ion-item.custom-item{
+  --background: transparent;
+}
+
+ion-list ion-item-sliding:nth-child(odd) ion-item.custom-item {
+  --background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(100,100,100,0.1) 100%);
+}
+
+
+
+ion-button {
+  --background: transparent;
+  --color: #192A56;
+  margin: 0;
+  padding: 0 15px;
+  height: 3em;
+  ion-icon {
+    font-size: 25px;
+  }
+}
+
+
+ion-item-option.desvincular-option {
+  background: #b30404da;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

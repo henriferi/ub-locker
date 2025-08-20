@@ -1,0 +1,591 @@
+/* App Global CSS - UB Locker */
+/* ----------------------------------------------------------------------------
+   Estilos globais do app UB Locker. Aplicados em toda a aplicação.
+   ---------------------------------------------------------------------------- */
+
+/* Ionic core styles */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional utilities */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Dark mode */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Fontes */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ========= GERAL ========= */
+body {
+  position: relative;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  background: #ffffff;
+}
+
+h1,
+h2 {
+  color: #192a56;
+}
+
+.title-header {
+  text-transform: uppercase;
+}
+
+/* ========= ION-CONTENT COM BACKGROUND ========= */
+ion-content {
+  --background: transparent;
+  background: transparent;
+  position: relative;
+}
+
+ion-content::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/imgs/background-2024.png");
+  background-size: 800px;
+  filter: grayscale(1) opacity(0.2);
+  z-index: 0;
+}
+
+/* ========= TAB BAR ========= */
+ion-tab-bar {
+  --background: #f7f7f7;
+  --color: #192a56;
+}
+
+.qrcode-button:nth-child(2) {
+  --color-selected: #fbc531;
+}
+
+/* ========= HEADER ========= */
+ion-header {
+  background: linear-gradient(135deg, #f7f7f7 0%, #f1f1f1 100%);
+  border-bottom: solid 1px #c6c6c6;
+  height: 60px;
+  box-shadow: none !important;
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 60px;
+    }
+  }
+
+  h1 {
+    font-size: 1em;
+    color: #192a56;
+    margin: 0;
+    line-height: 2.7;
+  }
+
+  ion-icon {
+    color: #192a56;
+  }
+}
+
+/* ========= BUTTONS ========= */
+ion-button {
+  --color: #ffffff;
+  height: 3em;
+}
+
+.button-solid {
+  --box-shadow: none;
+}
+
+/* ========= SUBHEADER ========= */
+.sub-header-container {
+  width: 100%;
+  border-bottom: solid 1px #c6c6c6;
+  background-color: #f7f7f7;
+}
+
+.sub-header {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px 15px;
+
+  h4 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 12px;
+    color: #192a56;
+    display: flex;
+    align-items: center;
+  }
+
+  ion-icon {
+    padding-right: 5px;
+    font-size: 22px;
+  }
+}
+
+/* ========= LOCKER CONTENT ========= */
+.locker-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px 15px;
+}
+
+/* ========= ION LISTS ========= */
+ion-list {
+  background: transparent !important;
+}
+
+/* ========= TOAST ========= */
+.toast-custom-text {
+  color: #ffffff;
+}
+
+/* ========= MODAL CONFIRM ========= */
+.modal-confirm .modal-container {
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-confirm .modal-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/imgs/background-2024.png");
+  background-size: 800px;
+  filter: grayscale(1) opacity(0.1);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.modal-confirm .modal-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #192a56;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.modal-confirm .modal-message {
+  margin-bottom: 16px;
+  color: #192a56;
+}
+
+.modal-confirm .modal-buttons ion-button {
+  margin-top: 8px;
+  --color: #192a56;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 100%;
+
+  ion-button {
+    width: 50%;
+    padding: 0;
+    height: 3em;
+    --padding-start: 0;
+    --padding-end: 0;
+    --border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .button-text {
+    font-weight: bold;
+    color: inherit;
+    text-align: right;
+    font-size: 1em;
+  }
+
+  .button-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    margin-bottom: 3px;
+    flex-shrink: 0;
+    color: inherit;
+  }
+
+  .btn-logout {
+    --background: #192a56;
+    color: #ffffff;
+  }
+
+  .btn-logout-cancel {
+    --background: #ccc;
+    color: #192a56;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-modal {
+    --ion-background-color: #ffffff !important;
+  }
+
+  .modal-confirm ion-content::before {
+    filter: grayscale(1) opacity(0.1);
+  }
+}
+
+app-logout-confirm-modal.ion-page {
+  background: #fdfdfd;
+}
+
+/* ========= MODAL DE HISTÓRICO ========= */
+.historico-modal {
+  text-align: center;
+
+  ion-header {
+    border: none;
+    display: flex;
+    justify-content: center;
+
+    ion-title {
+      padding-top: 15px;
+      color: #192a56;
+    }
+  }
+
+  .modal-container {
+    --background: #ffffff;
+
+    p {
+      color: #192a56;
+    }
+  }
+
+  ion-list {
+    padding: 0;
+
+    p {
+      font-size: 0.6em;
+    }
+  }
+
+  .atendente,
+  strong {
+    font-size: 1em;
+  }
+
+  ion-icon {
+    color: #192a56;
+    font-size: 1.2em;
+    margin-right: 6px;
+  }
+
+  ion-item {
+    --border-style: none;
+    --background: transparent;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    color: #192a56;
+
+    ion-badge {
+      background-color: transparent;
+      color: #192a56;
+    }
+  }
+
+  ion-item::part(native) {
+    padding: 4px 20px;
+  }
+
+  ion-list ion-item:nth-child(odd) {
+    --background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(100, 100, 100, 0.1) 100%
+    );
+  }
+}
+
+/* ========= MODAL - DESVINCULAR ALUNO ======= */
+
+app-desvincular-modal {
+  background-color: #f1f1f1;
+
+  .modal-container {
+    background-color: #f1f1f1;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+
+    .modal-sheet {
+      --height: calc(60% - (var(--ion-safe-area-top) + 10px));
+    }
+
+    .modal-container::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("./assets/imgs/background-2024.png");
+      background-size: 800px;
+      filter: grayscale(1) opacity(0.1);
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #192a56;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .modal-message {
+      margin-bottom: 16px;
+      color: #192a56;
+    }
+
+    .modal-buttons ion-button {
+      margin-top: 8px;
+      --color: #192a56;
+    }
+
+    .modal-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      width: 100%;
+
+      .btn-logout {
+        width: 50%;
+        --background: #192a56;
+        color: #ffffff;
+      }
+
+      .btn-logout-cancel {
+        width: 50%;
+        --background: #ccc;
+        color: #192a56;
+      }
+    }
+  }
+}
+
+/* ========= MODAL - ALTERAR SENHA ======= */
+
+app-alterar-senha-modal {
+  background-color: #f1f1f1;
+  margin-top: 0;
+
+  ion-header {
+    border: none;
+    display: flex;
+    justify-content: center;
+    background: rgb(236, 234, 234);
+
+    ion-title {
+      padding-top: 5px;
+      color: #192a56;
+      font-size: 1.1em;
+    }
+
+    ion-button {
+      color: #192a56;
+      font-size: 0.8em;
+    }
+  }
+
+  ion-list {
+    ion-item {
+      --background: transparent;
+      color: #192a56;
+    }
+  }
+
+  .btn-senha {
+    margin-top: 22px;
+    --background: #192a56;
+  }
+}
+
+/* ========= MODAL - EDITAR PERFIL ======= */
+
+app-editar-perfil-modal {
+  background-color: #f1f1f1;
+  margin-top: 0;
+
+  ion-header {
+    border: none;
+    display: flex;
+    justify-content: center;
+    background: rgb(236, 234, 234);
+
+    ion-title {
+      padding-top: 5px;
+      color: #192a56;
+      font-size: 1.1em;
+    }
+
+    ion-button {
+      color: #192a56;
+      font-size: 0.8em;
+    }
+  }
+
+  ion-list {
+    ion-item {
+      --background: transparent;
+      color: #192a56;
+      padding-right: 14px;
+    }
+  }
+
+  .save-btn {
+    --background: #192a56;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .btn-senha {
+    margin-top: 22px;
+    --background: #192a56;
+  }
+}
+
+/* ========= MODAL - VERIFICAR ALUNO ======= */
+
+app-verificar-aluno-modal {
+  background-color: #f1f1f1;
+  margin-top: 0;
+
+  ion-header {
+    border: none;
+    display: flex;
+    justify-content: center;
+    background: rgb(236, 234, 234);
+
+    ion-title {
+      padding-top: 5px;
+      color: #192a56;
+      font-size: 1.1em;
+    }
+
+    ion-button {
+      color: #192a56;
+      font-size: 0.7em;
+      padding-right: 5px;
+    }
+  }
+}
+
+/* ========= MODAL - DADOS VINCULO ======= */
+
+app-dados-vinculo-modal {
+  background-color: #f1f1f1;
+  margin-top: 0;
+
+  ion-header {
+    border: none;
+    display: flex;
+    justify-content: center;
+    background: rgb(236, 234, 234);
+
+    ion-title {
+      padding-top: 5px;
+      color: #192a56;
+      font-size: 1.1em;
+    }
+
+    ion-button {
+      color: #192a56;
+      font-size: 0.7em;
+      padding-right: 5px;
+    }
+  }
+}
+
+/* ========= ACTION SHEETS ========= */
+
+// COR DO BG, TITULO e CANCELAR
+.action-vincular-lockers {
+  --background: #ffffff;
+  --color: #192a56;
+
+  .action-sheet-title {
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .action-sheet-button {
+    color: #192a56;
+    font-weight: 500;
+  }
+
+  .action-sheet-cancel {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+/* ========= TOOLBAR ========= */
+ion-toolbar {
+  --background: transparent;
+}
+
+/* ======== Loadings ======== */
+
+.modal-loading::part(backdrop),
+.modal-loading-login::part(backdrop) {
+  background: rgba(0, 0, 0, 0.163);
+}
+
+.modal-loading,
+.modal-loading-login {
+  --background: #000000f4;
+  --box-shadow: none;
+  opacity: 1 !important;
+}
+
+.modal-loading-fullscreen,
+.modal-loading-login {
+  --width: 100vw;
+  --height: 100vh;
+  --max-width: 100vw;
+  --max-height: 100vh;
+  --border-radius: 0;
+  --background: transparent;
+
+  ion-modal::part(content) {
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+  }
+}
+
+.toast-text-white .toast-message {
+  color: white !important;
+}

@@ -1,0 +1,88 @@
+<ion-header>
+  <div class="locker-content page-header">
+    <div class="page-header-logo">
+      <img src="./../../../assets/imgs/brasao-unibra-azul.png" alt="Logo UNIBRA" />
+    </div>
+    <h1 class="title-header">Locker</h1>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="sub-header-container">
+    <div class="locker-content sub-header">
+      <div class="photo">
+        <img src="https://www.mygeekconfessions.com/wp-content/uploads/2014/07/stazfeat.png" alt="foto de perfil" />
+      </div>
+
+      <div class="info-usuario">
+        <h3>{{ nomeAluno }}</h3>
+        <p class="box-info">
+          <ion-icon name="person" class="icon-cpf"></ion-icon>
+          {{ cpfAluno }}
+        </p>
+
+        <p class="box-info">
+          <ion-icon name="card-outline" class="icon-ra"></ion-icon>
+          {{ RAAluno }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider -->
+  <swiper-container pagination="true">
+    <!-- Slide 1: Apenas o QR Code -->
+    <swiper-slide>
+      <div class="sub-header-container">
+        <div class="locker-content info-sub">
+          <h2 class="title">
+            <ion-icon class="icon" name="qr-code-outline"></ion-icon>
+            MEU QRCODE
+          </h2>
+        </div>
+      </div>
+
+      <div class="slide-box">
+        <div class="locker-content">
+          <div class="qr-code-container">
+            <canvas id="canvas-qr"></canvas>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+
+    <!-- Slide 2: Conteúdo do Locker -->
+    <swiper-slide *ngIf="hasLocker" class="page-info">
+      <div class="sub-header-container">
+        <div class="locker-content info-sub">
+          <h2 class="title">
+            <ion-icon class="icon" name="information-circle-outline"></ion-icon>
+            INFORMAÇÕES DO LOCKERR
+          </h2>
+        </div>
+      </div>
+
+      <div class="slide-box">
+        <div class="locker-content">
+          <ul>
+            <li>
+              <ion-icon class="icon" name="location-outline"></ion-icon>
+              <h2>Local</h2>
+              <p>{{ local }}</p>
+            </li>
+            <li>
+              <ion-icon class="icon" name="file-tray-stacked-outline"></ion-icon>
+              <h2>Armario</h2>
+              <p>{{ armario }}</p>
+            </li>
+            <li>
+              <ion-icon class="icon" name="hourglass-outline"></ion-icon>
+              <h2>Tempo restante</h2>
+              <p>{{ remainingTime }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

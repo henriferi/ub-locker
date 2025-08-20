@@ -1,0 +1,5 @@
+export const environment = {
+  production: true,
+  apiUrl: 'http://api.grupounibra.com/api/locker/v1',
+  TOKEN:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5ncnVwb3VuaWJyYS5jb20vYXBpL2dlcmFyLXRva2VuIiwiaWF0IjoxNzUxMjkwNzIzLCJuYmYiOjE3NTEyOTA3MjMsImp0aSI6Ilp3dTJJNWFGT2tUZ1dCNXkiLCJzdWIiOiIxIiwiaWRfYXBpIjoiOCIsInNhbHQiOiJCQFRAVEFGUklUQENPTUNIJkREQVImQkFDME5VQl9LRVlkYWJhMzE4M2RiOTZjNzc2N2U0NGZkMDA0N2U2NTEwMTIwMjUtMDYtMzAgMTA6Mzg6NDMifQ.QYZ3icTbCKIZ9QMfPJsPVW1R2zVaZnx3trHGK3hQlx8',
+};
